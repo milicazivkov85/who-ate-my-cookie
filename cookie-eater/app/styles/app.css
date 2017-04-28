@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'AccentCookieDough';
+    src: url(/fonts/accent_cookie_dough.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.jumbotron h1 {
+    font-family: AccentCookieDough;
+    font-size: 120px !important;
+    color: deeppink !important;
+}
