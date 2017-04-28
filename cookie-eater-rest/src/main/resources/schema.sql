@@ -1,0 +1,4 @@
+CREATE TABLE cookie (
+   id INT IDENTITY PRIMARY KEY,
+   name VARCHAR(50) NOT NULL
+);

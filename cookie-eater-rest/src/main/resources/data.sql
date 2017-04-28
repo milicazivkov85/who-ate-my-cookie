@@ -1,0 +1,1 @@
+INSERT INTO cookie (name) VALUES ('Cream Dream');
