@@ -4,7 +4,8 @@
 
 angular
     .module('cookieEaterApp', [
-        'ui.router'
+        'ui.router',
+        'ngResource'
     ])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
@@ -15,6 +16,7 @@ angular
         $stateProvider
             .state('welcome', {
                 url: '/welcome',
+                controller: 'WelcomeCtrl',
                 templateUrl: 'views/welcome.html'
             })
     }]);
