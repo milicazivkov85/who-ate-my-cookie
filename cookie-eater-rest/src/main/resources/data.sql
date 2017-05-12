@@ -1,3 +1,3 @@
-INSERT INTO cookie (name) VALUES ('Cream Dream');
-INSERT INTO cookie (name) VALUES ('Choco Heaven');
-INSERT INTO cookie (name) VALUES ('Honey Crisp');
+INSERT INTO sweets.cookie (name) VALUES ('Cream Dream');
+INSERT INTO sweets.cookie (name) VALUES ('Choco Heaven');
+INSERT INTO sweets.cookie (name) VALUES ('Honey Crisp');
