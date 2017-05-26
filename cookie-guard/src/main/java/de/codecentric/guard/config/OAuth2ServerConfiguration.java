@@ -26,7 +26,7 @@ public class OAuth2ServerConfiguration {
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
             clients.inMemory()
                     .withClient("cookie-eater-web")
-                    .redirectUris("http://localhost:9005/token-receiver")
+                    .redirectUris("http://localhost:9005/#/token-receiver?")
                     .resourceIds("cookie-eater-rest")
                     .authorizedGrantTypes("implicit")
                     .authorities("admin")

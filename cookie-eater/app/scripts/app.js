@@ -10,10 +10,17 @@ angular
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
-            $location.path('/welcome');
+            $location.path('/login');
         });
 
         $stateProvider
+            .state('login', {
+                url: '/login',
+                controller: 'LoginCtrl'
+            }).state('token-receiver', {
+                url: '/token-receiver?access_token',
+                controller: 'TokenProcessingCtrl'
+            })
             .state('welcome', {
                 url: '/welcome',
                 controller: 'WelcomeCtrl',
