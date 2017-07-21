@@ -17,7 +17,8 @@ angular
             .state('login', {
                 url: '/login',
                 controller: 'LoginCtrl'
-            }).state('token-receiver', {
+            })
+            .state('token-receiver', {
                 url: '/token-receiver?access_token',
                 controller: 'TokenProcessingCtrl'
             })

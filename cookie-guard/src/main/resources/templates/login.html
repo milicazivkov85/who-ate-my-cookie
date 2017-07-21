@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+    <div class="container" tiles:fragment="content">
+
+        <form class="form-signin" name="f" th:action="@{/login}" method="post">
+            <h2 class="form-signin-heading">Please sign in</h2>
+
+            <label for="username" class="sr-only">Email address</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="true" autofocus="true"/>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="true"/>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <div th:if="${param.error}" class="form-group has-error">
+                <label class="control-label">Wrong username or password.</label>
+            </div>
+            <div th:if="${param.logout}" class="form-group has-success">
+                <label class="control-label">Logout successful.</label>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

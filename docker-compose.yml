@@ -13,4 +13,4 @@ services:
     ports:
       - "9005:80"
     volumes:
-      - D:/projects/20posto/blog-angular-security/ws/who-ate-my-cookie/cookie-eater/app:/usr/share/nginx/html
+      - ~/Projects/20posto/blog-angular-security/ws/who-ate-my-cookie/cookie-eater/app:/usr/share/nginx/html
