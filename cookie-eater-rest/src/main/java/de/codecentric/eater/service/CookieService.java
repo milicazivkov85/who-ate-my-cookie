@@ -15,4 +15,12 @@ public class CookieService {
     public List getCookies(String username) {
         return cookieRepository.findByUsername(username);
     }
+
+    public void remove(Integer id) {
+        cookieRepository.delete(id);
+    }
+
+    public void removeAllCookiesFor(String username) {
+        cookieRepository.delete(username);
+    }
 }

@@ -12,6 +12,7 @@ public class SweetCookieMapper implements RowMapper<SweetCookie> {
     public SweetCookie mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         SweetCookie cookie = new SweetCookie();
         cookie.setName(resultSet.getString("name"));
+        cookie.setId(resultSet.getInt("id"));
         return cookie;
     }
 }
