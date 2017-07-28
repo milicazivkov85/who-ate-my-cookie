@@ -14,3 +14,9 @@ services:
       - "9005:80"
     volumes:
       - ~/Projects/20posto/blog-angular-security/ws/who-ate-my-cookie/cookie-eater/app:/usr/share/nginx/html
+  cookie-stealer:
+    image: nginx
+    ports:
+      - "9004:80"
+    volumes:
+      - ~/Projects/20posto/blog-angular-security/ws/who-ate-my-cookie/cookie-stealer/app:/usr/share/nginx/html
