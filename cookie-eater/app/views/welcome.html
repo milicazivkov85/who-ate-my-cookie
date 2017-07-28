@@ -25,7 +25,7 @@
         <p>This is a demo for an insecure website implemented with angular. Read more about securing angular applications at <a target="_blank" href="https://blog.codecentric.de/en">codecentric blog</a>. Watch out for your cookies!</p>
         <br>
         <p>I'm hungry!</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Eat all</a></p>
+        <p><a ng-click="eatAll()" class="btn btn-primary btn-lg" role="button">Eat all</a></p>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
             <h2>{{cookie.name}}</h2>
             <img src="/images/choco.jpg" width="340px" height="auto"/>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">Eat me</a></p>
+            <p><a ng-click="eatMe(cookie)" class="btn btn-default" role="button">Eat me</a></p>
         </div>
     </div>
 

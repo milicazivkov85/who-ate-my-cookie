@@ -20,6 +20,20 @@
             $window.location = 'http://localhost:8081/logout';
         };
 
+        $scope.eatMe = function(cookie) {
+            var cookieResource = $resource('http://localhost:8080/cookie/:cookieId', {cookieId: cookie.id});
+            cookieResource.remove(function() {
+                loadSweets();
+            });
+        };
+
+        $scope.eatAll = function() {
+            var myCookies = $resource('http://localhost:8080/cookie/');
+            myCookies.remove(function() {
+                loadSweets();
+            });
+        };
+
         loadUser();
         loadSweets();
 
