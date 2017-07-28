@@ -12,10 +12,15 @@
             $scope.sweetCookies = CookieService.query();
         }
 
+        function loadUser() {
+            $scope.loggedInUser = $resource('http://localhost:8080/user/').get();
+        }
+
         $scope.logout = function() {
             $window.location = 'http://localhost:8081/logout';
         };
 
+        loadUser();
         loadSweets();
 
     }

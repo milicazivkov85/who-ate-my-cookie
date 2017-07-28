@@ -13,7 +13,7 @@ public class CookieRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<SweetCookie> findAll() {
-        return jdbcTemplate.query("select name from cookie", new SweetCookieMapper());
+    public List<SweetCookie> findByUsername(String username) {
+        return jdbcTemplate.query("select name from cookie where username = ?", new Object[] {username},  new SweetCookieMapper());
     }
 }

@@ -12,7 +12,7 @@ public class CookieService {
     @Autowired
     private CookieRepository cookieRepository;
 
-    public List getCookies() {
-        return cookieRepository.findAll();
+    public List getCookies(String username) {
+        return cookieRepository.findByUsername(username);
     }
 }

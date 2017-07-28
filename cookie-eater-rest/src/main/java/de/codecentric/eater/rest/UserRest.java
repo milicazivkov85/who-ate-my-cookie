@@ -1,25 +1,23 @@
 package de.codecentric.eater.rest;
 
-import de.codecentric.eater.service.CookieService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/cookie")
-public class CookieRest {
-
-    @Autowired
-    private CookieService cookieService;
+@RequestMapping("/user")
+public class UserRest {
 
     @RequestMapping(method = RequestMethod.GET)
-    public List getCookies(Principal principal) {
-        return cookieService.getCookies(principal.getName());
+    public Object getUsername(Principal user) {
+        Map map = new HashMap<String, String>();
+        map.put("username", user.getName());
+        return map;
     }
 }
