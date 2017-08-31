@@ -1,8 +1,8 @@
-INSERT INTO sweets.users (username, password, enabled) VALUES ('user', 'user', 1);
-INSERT INTO sweets.authorities (username, authority) VALUES ('user', 'ROLE_USER');
+INSERT INTO auth.users (username, password, enabled) VALUES ('richard', 'richard', 1);
+INSERT INTO auth.authorities (username, authority) VALUES ('richard', 'ROLE_USER');
 
-INSERT INTO sweets.users (username, password, enabled) VALUES ('milica', 'milica', 1);
-INSERT INTO sweets.authorities (username, authority) VALUES ('milica', 'ROLE_USER');
+INSERT INTO auth.users (username, password, enabled) VALUES ('david', 'david', 1);
+INSERT INTO auth.authorities (username, authority) VALUES ('david', 'ROLE_USER');
 
-INSERT INTO sweets.users (username, password, enabled) VALUES ('admin', 'admin', 1);
-INSERT INTO sweets.authorities (username, authority) VALUES ('admin', 'ROLE_USER');
+INSERT INTO auth.users (username, password, enabled) VALUES ('roger', 'roger', 1);
+INSERT INTO auth.authorities (username, authority) VALUES ('roger', 'ROLE_USER');

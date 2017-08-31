@@ -14,7 +14,7 @@ public class CookieRepository {
     private JdbcTemplate jdbcTemplate;
 
     public List<SweetCookie> findByUsername(String username) {
-        return jdbcTemplate.query("select name, id from cookie where username = ?", new Object[] {username},  new SweetCookieMapper());
+        return jdbcTemplate.query("select name, cookie.id from cookie join eater on cookie.eater_id = eater.id where username = ?", new Object[] {username},  new SweetCookieMapper());
     }
 
     public void delete(Integer id) {
@@ -22,6 +22,6 @@ public class CookieRepository {
     }
 
     public void delete(String username) {
-        jdbcTemplate.execute("delete from cookie where username = '" + username + "'");
+        jdbcTemplate.execute("delete from cookie join eater on cookie.eater_id = eater.id where username = '" + username + "'");
     }
 }

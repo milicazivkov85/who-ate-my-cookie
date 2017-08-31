@@ -12,8 +12,8 @@
             $scope.sweetCookies = CookieService.query();
         }
 
-        function loadUser() {
-            $scope.loggedInUser = $resource('http://localhost:8080/user/').get();
+        function loadEater() {
+            $scope.loggedInUser = $resource('http://localhost:8080/eater/').get();
         }
 
         $scope.logout = function() {
@@ -34,7 +34,7 @@
             });
         };
 
-        loadUser();
+        loadEater();
         loadSweets();
 
     }
