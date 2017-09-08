@@ -5,6 +5,10 @@ CREATE TABLE IF NOT EXISTS sweets.eater (
    id INT AUTO_INCREMENT PRIMARY KEY,
    firstname VARCHAR(50) NOT NULL,
    lastname VARCHAR(50) NOT NULL,
+   email VARCHAR(50),
+   city VARCHAR(50),
+   street VARCHAR(50),
+   birthday DATE,
    username VARCHAR(50) NOT NULL,
    UNIQUE(username)
 );

@@ -1,0 +1,70 @@
+<div ng-include="'/views/header.html'"></div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>My Profile</h1>
+
+        <p>This is a demo for an insecure website implemented with angular. Read more about securing angular
+            applications at <a target="_blank" href="https://blog.codecentric.de/en">codecentric blog</a>. Watch out for
+            your cookies!</p>
+    </div>
+</div>
+
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" ng-model="profile.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                           placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="firstname">First name</label>
+                    <input type="text" ng-model="profile.firstname" class="form-control" id="firstname" placeholder="Enter first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last name</label>
+                    <input type="text" ng-model="profile.lastname" class="form-control" id="lastname" placeholder="Enter last name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="birthday">Date of birth</label>
+                    <p class="input-group">
+                        <input type="text" class="form-control" id="birthday" uib-datepicker-popup="dd.MM.yyyy"
+                               ng-model="profile.birthday"
+                               ng-readonly="true" placeholder="Select date"
+                               is-open="birthdayPicker.opened"
+                               close-text="Close"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openBirthdayPicker()"><i
+                                class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="text" ng-model="profile.street" class="form-control" id="street" placeholder="Enter street">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" ng-model="profile.city" class="form-control" id="city" placeholder="Enter city">
+                </div>
+                <button type="submit" ng-click="saveProfileChanges()" nclass="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <hr>
+
+    <footer>
+        <p>&copy; 2017 Company, Inc.</p>
+    </footer>
+</div>

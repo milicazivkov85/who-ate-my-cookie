@@ -78,7 +78,7 @@ public class OAuth2ServerConfiguration {
             .and()
                 .formLogin()
                     .loginPage("/login").permitAll()
-                .defaultSuccessUrl("http://localhost:9005/#/login")
+                .defaultSuccessUrl("http://localhost:9005/#/welcome")
             .and()
                 .logout().logoutSuccessUrl("/login?logout");
         }
