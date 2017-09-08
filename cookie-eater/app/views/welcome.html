@@ -1,23 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Cookie eater</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <span class="label" style="font-size:100%">{{loggedInUser.firstname}} {{loggedInUser.lastname}}</span>
-                <button ng-click="logout()" class="btn btn-success">Logout</button>
-            </form>
-        </div>
-    </div>
-    </div>
-</nav>
+<div ng-include="'/views/header.html'"></div>
 
 <div class="jumbotron">
     <div class="container">

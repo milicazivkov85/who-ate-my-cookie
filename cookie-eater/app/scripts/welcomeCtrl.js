@@ -5,20 +5,12 @@
     angular.module('cookieEaterApp')
         .controller('WelcomeCtrl', WelcomeCtrl);
 
-    function WelcomeCtrl($scope, $resource, $window) {
+    function WelcomeCtrl($scope, $resource) {
 
         function loadSweets() {
             var CookieService = $resource('http://localhost:8080/cookie/');
             $scope.sweetCookies = CookieService.query();
         }
-
-        function loadEater() {
-            $scope.loggedInUser = $resource('http://localhost:8080/eater/').get();
-        }
-
-        $scope.logout = function() {
-            $window.location = 'http://localhost:8081/logout';
-        };
 
         $scope.eatMe = function(cookie) {
             var cookieResource = $resource('http://localhost:8080/cookie/:cookieId', {cookieId: cookie.id});
@@ -34,7 +26,6 @@
             });
         };
 
-        loadEater();
         loadSweets();
 
     }

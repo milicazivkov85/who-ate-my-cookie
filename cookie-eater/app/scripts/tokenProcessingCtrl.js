@@ -5,9 +5,9 @@
     angular.module('cookieEaterApp')
         .controller('TokenProcessingCtrl', TokenProcessingCtrl);
 
-    function TokenProcessingCtrl($scope, $http, $stateParams, $state) {
+    function TokenProcessingCtrl($scope, $http, $stateParams, $state, tokenStorage) {
 
-        $http.defaults.headers.common.Authorization='Bearer '+ $stateParams.access_token;
+        tokenStorage.set($stateParams.access_token);
         $state.go('welcome');
     }
 

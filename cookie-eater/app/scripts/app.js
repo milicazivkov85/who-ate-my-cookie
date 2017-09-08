@@ -5,8 +5,15 @@
 angular
     .module('cookieEaterApp', [
         'ui.router',
+        'ui.bootstrap',
         'ngResource'
     ])
+    .config(['$locationProvider', function($locationProvider) {
+        $locationProvider.hashPrefix('');
+    }])
+    .config(['$qProvider', function ($qProvider) {
+        $qProvider.errorOnUnhandledRejections(false);
+    }])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
@@ -27,6 +34,18 @@ angular
                 controller: 'WelcomeCtrl',
                 templateUrl: 'views/welcome.html'
             })
-    }]);
+            .state('profile', {
+                url: '/profile',
+                controller: 'ProfileCtrl',
+                templateUrl: 'views/profile.html'
+            })
+    }])
+    .run(['$rootScope', 'tokenStorage', '$http', function ($rootScope, tokenStorage, $http) {
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+            $http.defaults.headers.common.Authorization='Bearer '+ tokenStorage.get();
+        });
+
+    }])
 
 })();
