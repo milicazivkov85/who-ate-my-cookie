@@ -80,7 +80,7 @@ public class OAuth2ServerConfiguration {
                     .loginPage("/login").permitAll()
                 .defaultSuccessUrl("http://localhost:9005/#/welcome")
             .and()
-                .logout().logoutSuccessUrl("/login?logout");
+                .logout().logoutSuccessUrl("/login?logout").permitAll();
         }
     }
 }
